@@ -23,7 +23,11 @@ CS1951 assignment, ACM Class, SJTU
 
 ## 分数构成
 
-待定
+`vector`：4%
+
+`priority_queue`：5%
+
+`map`：6%
 
 ## 截止日期
 
