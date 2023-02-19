@@ -6,7 +6,7 @@ CS1951 assignment, ACM Class, SJTU
 
 要求实现与 C++ 标准库类似的数据结构，包括迭代器等。框架接口在已本仓库中给出，只需要实现 `.hpp` 文件内所要求的内容即可。
 
-请注意，在本作业中，只允许使用 `cstdio`，`cstring`，`iostream`，`cmath` 四个 C++ 标准库，如需使用其他功能请自行实现。在下发代码中有 `exceptions.hpp` 和 `utility.hpp` 两个辅助文件，你需要使用其中的异常处理和 `sjtu::pair` 完成 STLite 的实现，但不允许修改其中的任何内容。
+请注意，在本作业中，只允许使用 `cstdio`，`cstring`，`iostream`，`cmath`，`string` 五个 C++ 标准库，如需使用其他功能请自行实现。在下发代码中有 `exceptions.hpp` 和 `utility.hpp` 两个辅助文件，你需要使用其中的异常处理和 `sjtu::pair` 完成 STLite 的实现，但不允许修改其中的任何内容。
 
 本学期要求完成三个容器：`sjtu::vector`，`sjtu::priority_queue`，`sjtu::map`.
 
