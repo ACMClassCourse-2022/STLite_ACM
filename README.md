@@ -23,15 +23,13 @@ CS1951 assignment, ACM Class, SJTU
 
 ## 分数构成
 
-待定
-
 ## 截止日期
 
-`vector`：3月5日（第三周周日）23:59前
+`vector`：3 月 5 日（第三周周日）18:30 前
 
-`priority_queue`：？？？
+`priority_queue`：3 月 19 日（第五周周日）18:30 前
 
-`map`：？？？
+`map`：未发布
 
 ## 迟交惩罚
 
