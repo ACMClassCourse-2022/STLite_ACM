@@ -49,10 +49,52 @@ int main() {
     return 0;
 }
 ```
+以及traits自定义模板类的实现示例：
+```
+// 定义数据 type 类
+enum Type {
+  TYPE_1,
+  TYPE_2,
+  TYPE_3
+}
+// 自定义数据类型
+class Foo {
+public:
+  Type type = TYPE_1; 
+};
+class Bar {
+public:
+  Type type = TYPE_2; 
+};
+// 定义type traits的模板类，所有像这个模板类一样含有Type的类会被萃取出来进行模板化处理
+template<typename T>
+struct type_traits {
+  Type type = T::type;
+}
+// 内置数据类型同样可以进行这种萃取
+template<typename int>
+struct type_traits {
+  Type type = Type::TYPE_1;
+}
+template<typename double>
+struct type_traits {
+  Type type = Type::TYPE_3;
+}
+// 萃取之后进行统一处理，写统一的编码函数
+template<typename T>
+void decode<const T& data, char* buf) {
+  if(type_traits<T>::type == Type::TYPE_1) {
+    ...
+  }
+  else if(type_traits<T>::type == Type::TYPE_2) {
+    ...
+  }
+}
+```
 ## Bonus
 我们的 Bonus 可以是实现类似于 C++ 11 中的 type_traits 的某些功能，但是不要求完全一致。
 
-我们以“迭代器可否被赋值特性”给出一个简单的实现思路：
+这里举一个示例，我们以“迭代器可否被赋值特性”给出一个简单的实现思路：
 ```C++
 //1.定义一个 type_traits 模板类
 template<typename T>
@@ -75,6 +117,9 @@ class const_iterator{
     using iterator_assignable = my_false_type;
 };
 ```
-当然如果你想获得全部的 Bonus 分数，你还需要实现其他的 type_traits 的功能。这部分我们不会提供提示数据，所以你还需要自己设计测试代码，并且在 code review 时向助教展示。
+这部分我们不会提供提示数据，所以你需要自己设计测试代码，并且在 code review 时向助教展示。
+**按照提示完成可赋值性的萃取即可拿到4%的bonus分数，如果能利用type traits做出更多特性萃取和处理，在cr时展示给助教，对于有实际应用意义的萃取处理将会给出一定程度的溢出bonus。**
+
+如果想了解更多关于type traits，可以参考https://en.cppreference.com/w/cpp/header/type_traits ，或许其中的一些做法会给你一些思路的启发。
 
 我们鼓励大家多去尝试，但不建议大家在这个作业中花费太多时间。
