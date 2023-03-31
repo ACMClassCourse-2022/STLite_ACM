@@ -35,7 +35,7 @@ CS1951 assignment, ACM Class, SJTU
 
 `priority_queue`：3 月 19 日（第五周周日）18:30 前
 
-`map`：未发布
+`map`：4 月 9 日（第八周周日）18:30 前
 
 ## 迟交惩罚
 
